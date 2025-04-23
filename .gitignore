@@ -1,0 +1,11 @@
+__pycache__
+.ipynb_checkpoints
+
+/key_looker/credential.json
+.env
+*.ipynb
+*.png
+*.jpg
+*.sql
+/config.py
+

@@ -1,0 +1,29 @@
+[2025-04-23T00:53:20.635+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_dwh_mart.dwh_mart_revenue_period scheduled__2025-04-21T03:30:00+00:00 [queued]>
+[2025-04-23T00:53:20.652+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_dwh_mart.dwh_mart_revenue_period scheduled__2025-04-21T03:30:00+00:00 [queued]>
+[2025-04-23T00:53:20.654+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2025-04-23T00:53:20.684+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): dwh_mart_revenue_period> on 2025-04-21 03:30:00+00:00
+[2025-04-23T00:53:20.699+0000] {standard_task_runner.py:60} INFO - Started process 292 to run task
+[2025-04-23T00:53:20.708+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_dwh_mart', 'dwh_mart_revenue_period', 'scheduled__2025-04-21T03:30:00+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/dags_etl.py', '--cfg-path', '/tmp/tmpfb59rl7r']
+[2025-04-23T00:53:20.710+0000] {standard_task_runner.py:88} INFO - Job 12: Subtask dwh_mart_revenue_period
+[2025-04-23T00:53:20.800+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_dwh_mart.dwh_mart_revenue_period scheduled__2025-04-21T03:30:00+00:00 [running]> on host a896c9815708
+[2025-04-23T00:53:20.951+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_dwh_mart' AIRFLOW_CTX_TASK_ID='dwh_mart_revenue_period' AIRFLOW_CTX_EXECUTION_DATE='2025-04-21T03:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-21T03:30:00+00:00'
+[2025-04-23T00:53:20.954+0000] {DWH_MartRevenuePeriod.py:30} INFO - Extracting data using query: 
+            SELECT order_date, order_total
+            FROM fact_orders;
+        
+[2025-04-23T00:53:20.957+0000] {DWH_MartRevenuePeriod.py:36} ERROR - Error extracting data: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2025-04-23T00:53:20.958+0000] {DWH_MartRevenuePeriod.py:77} ERROR - process failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2025-04-23T00:53:20.958+0000] {python.py:202} INFO - Done. Returned value was: None
+[2025-04-23T00:53:20.975+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=etl_dwh_mart, task_id=dwh_mart_revenue_period, execution_date=20250421T033000, start_date=20250423T005320, end_date=20250423T005320
+[2025-04-23T00:53:21.042+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-04-23T00:53:21.090+0000] {taskinstance.py:3312} INFO - 1 downstream tasks scheduled from follow-on schedule check

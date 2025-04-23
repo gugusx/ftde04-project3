@@ -1,0 +1,4 @@
+pandas==2.0.3
+gspread==6.1.2
+sqlalchemy==1.4.39
+oauth2client==4.1.3

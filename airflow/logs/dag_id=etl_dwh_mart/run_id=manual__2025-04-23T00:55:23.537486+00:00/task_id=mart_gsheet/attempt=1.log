@@ -1,0 +1,25 @@
+[2025-04-23T00:55:36.155+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_dwh_mart.mart_gsheet manual__2025-04-23T00:55:23.537486+00:00 [queued]>
+[2025-04-23T00:55:36.170+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_dwh_mart.mart_gsheet manual__2025-04-23T00:55:23.537486+00:00 [queued]>
+[2025-04-23T00:55:36.170+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2025-04-23T00:55:36.199+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): mart_gsheet> on 2025-04-23 00:55:23.537486+00:00
+[2025-04-23T00:55:36.211+0000] {standard_task_runner.py:60} INFO - Started process 357 to run task
+[2025-04-23T00:55:36.215+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_dwh_mart', 'mart_gsheet', 'manual__2025-04-23T00:55:23.537486+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/dags_etl.py', '--cfg-path', '/tmp/tmprsfz_tfq']
+[2025-04-23T00:55:36.218+0000] {standard_task_runner.py:88} INFO - Job 24: Subtask mart_gsheet
+[2025-04-23T00:55:36.304+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_dwh_mart.mart_gsheet manual__2025-04-23T00:55:23.537486+00:00 [running]> on host a896c9815708
+[2025-04-23T00:55:36.458+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_dwh_mart' AIRFLOW_CTX_TASK_ID='mart_gsheet' AIRFLOW_CTX_EXECUTION_DATE='2025-04-23T00:55:23.537486+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-23T00:55:23.537486+00:00'
+[2025-04-23T00:55:36.466+0000] {Mart_GoogleSheet.py:90} INFO - Processing worksheet: Sheet1
+[2025-04-23T00:55:36.467+0000] {Mart_GoogleSheet.py:35} INFO - Extracting data using query: SELECT * FROM mart_user_purchase;
+[2025-04-23T00:55:36.519+0000] {Mart_GoogleSheet.py:38} INFO - Data extraction successful
+[2025-04-23T00:55:39.547+0000] {Mart_GoogleSheet.py:93} INFO - Sheet1 updated successfully!
+[2025-04-23T00:55:39.552+0000] {Mart_GoogleSheet.py:90} INFO - Processing worksheet: Sheet2
+[2025-04-23T00:55:39.553+0000] {Mart_GoogleSheet.py:35} INFO - Extracting data using query: SELECT * FROM mart_user_repurchase;
+[2025-04-23T00:55:39.592+0000] {Mart_GoogleSheet.py:38} INFO - Data extraction successful
+[2025-04-23T00:55:42.101+0000] {Mart_GoogleSheet.py:93} INFO - Sheet2 updated successfully!
+[2025-04-23T00:55:42.103+0000] {Mart_GoogleSheet.py:90} INFO - Processing worksheet: Sheet3
+[2025-04-23T00:55:42.104+0000] {Mart_GoogleSheet.py:35} INFO - Extracting data using query: SELECT * FROM mart_revenue_period;
+[2025-04-23T00:55:42.134+0000] {Mart_GoogleSheet.py:38} INFO - Data extraction successful
+[2025-04-23T00:55:44.560+0000] {Mart_GoogleSheet.py:93} INFO - Sheet3 updated successfully!
+[2025-04-23T00:55:44.564+0000] {python.py:202} INFO - Done. Returned value was: None
+[2025-04-23T00:55:44.578+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=etl_dwh_mart, task_id=mart_gsheet, execution_date=20250423T005523, start_date=20250423T005536, end_date=20250423T005544
+[2025-04-23T00:55:44.632+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-04-23T00:55:44.659+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check
